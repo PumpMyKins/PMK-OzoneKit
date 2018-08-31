@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import fr.pmk_ozonekit.commands.ISubCommand;
 
-public class KitRangement implements ISubCommand {
+public class KitQuestReward implements ISubCommand{
 	
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
