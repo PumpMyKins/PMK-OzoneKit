@@ -5,7 +5,7 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 
-public class kitHelpCommand implements ISubCommand {
+public class KitHelpCommand implements ISubCommand {
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
 		sender.sendMessage("*--*  /kit help pour plus d'info  *--*");

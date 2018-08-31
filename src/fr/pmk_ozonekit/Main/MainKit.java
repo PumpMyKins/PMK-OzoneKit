@@ -1,6 +1,6 @@
 package fr.pmk_ozonekit.Main;
 
-import fr.pmk_ozonekit.commands.kitHelpCommand;
+import fr.pmk_ozonekit.commands.KitHelpCommand;
 import org.bukkit.command.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
