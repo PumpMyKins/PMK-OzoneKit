@@ -31,10 +31,10 @@ public class KitChecker {
 		
 		
 		String playerUUID = p.getUniqueId().toString();
-		
+		int used = 0;
 		ArrayList<File> files = getListFiles(kitname);
 		for(int i = 0;i < files.size(); i++) {
-				
+	
 			try {
 			
 				File fXmlFile = new File(files.get(i).getName());
@@ -48,12 +48,27 @@ public class KitChecker {
 
 				NodeList nList = kitx.getElementsByTagName("player");
 				
-			
+				for (int temp = 0;temp < nList.getLength(); temp++) {
+					
+					Node nNode = nList.item(temp);
+					
+					if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+						
+						Element eElement = (Element) nNode;
+						
+						String tempUUID = eElement.getAttribute("id");
+						
+						if (tempUUID == playerUUID) {
+							
+							used++;
+						}
+					}
+				}
 			} catch (Exception e) {
 		       e.printStackTrace();
-	    }
-		
-		return 0;
+			}
+		}
+		return used;
 	}
 	
 	public boolean onCheck(String kitname) {
