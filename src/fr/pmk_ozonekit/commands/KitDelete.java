@@ -35,6 +35,7 @@ public class KitDelete implements CommandExecutor {
 			    System.err.println(x);
 			}
 		}
+
 		return true;
 	}
 }
