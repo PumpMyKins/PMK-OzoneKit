@@ -11,9 +11,4 @@ public class KitHelpCommand implements ISubCommand {
 		sender.sendMessage("*--*  /kit help pour plus d'info  *--*");
 		return true;
 	}
-	
-	public boolean onSubCommand(Player p, Command cmd) {
-		
-		return onSubCommand(p, cmd, null);
-	}
 }

@@ -1,6 +1,8 @@
 package fr.pmk_ozonekit.Main;
 
 import fr.pmk_ozonekit.commands.kitCommandExecutor;
+import fr.pmk_ozonekit.commands.KitBuy;
+import fr.pmk_ozonekit.commands.KitDelete;
 import fr.pmk_ozonekit.commands.KitHelpCommand;
 import fr.pmk_ozonekit.commands.KitListCommand;
 import fr.pmk_ozonekit.kit.*;
@@ -8,6 +10,8 @@ import fr.pmk_ozonekit.kit.*;
 public class KitManager {
 	
 	private kitCommandExecutor kitCmd;
+	private KitBuy kitbuycmd;
+	private KitDelete kitdeletecmd;
 	
 	public KitManager() {
 		
@@ -33,7 +37,9 @@ public class KitManager {
 		
 		kitCmd.addSubCommand("gratuit1", new KitGratuit1());
 		kitCmd.addSubCommand("gratuit2", new KitGratuit2());
-
+		
+		MainKit.getInstance().getCommand("pmk-buy-kit").setExecutor(kitbuycmd);
+		MainKit.getInstance().getCommand("pmk-delete-kit").setExecutor(kitdeletecmd);
 	}
 
 	public kitCommandExecutor getKitCmd() {

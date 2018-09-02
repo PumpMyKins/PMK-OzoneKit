@@ -6,7 +6,6 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
 import org.bukkit.entity.Player;
 
 public class kitCommandExecutor implements CommandExecutor {
@@ -42,6 +41,10 @@ public class kitCommandExecutor implements CommandExecutor {
 				
 				
 			}
+		}
+		else {
+			
+			System.out.println("WHO THE HELL ARE U ?" + sender);
 		}
 		
 		return true;
