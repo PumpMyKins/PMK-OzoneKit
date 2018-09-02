@@ -7,30 +7,51 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
 
 import org.bukkit.entity.Player;
-import org.bukkit.entity.*;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
+
 
 public class KitChecker {
 	
-	public List<File> getListFiles(String path) {
+	public ArrayList<File> getListFiles(String path) {
 
 		File f = new File(path);
 		
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 		return files;
-		
 	}
-	public int checkUUID(Player p) {
+	
+	public int checkUUID(Player p, String kitname) {
 		
 		
 		String playerUUID = p.getUniqueId().toString();
 		
+		ArrayList<File> files = getListFiles(kitname);
+		for(int i = 0;i < files.size(); i++) {
+				
+			try {
+			
+				File fXmlFile = new File(files.get(i).getName());
+				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+				Document kitx = dBuilder.parse(fXmlFile);
+				
+				kitx.getDocumentElement().normalize();
+				
+				System.out.println("Root :" + kitx.getDocumentElement().getNodeName());
+
+				NodeList nList = kitx.getElementsByTagName("player");
+				
+			
+			} catch (Exception e) {
+		       e.printStackTrace();
+	    }
 		
 		return 0;
 	}
@@ -38,20 +59,24 @@ public class KitChecker {
 	public boolean onCheck(String kitname) {
 		
 		String kit = kitname;
-		boolean access = false;
 		
+		boolean access = false;
 		int nbreKit = getListFiles(kit).size();
 		
 		if(nbreKit < 1) {
 			
 			access = false;
 		}
-		
 		else {
 		
 			
 		}
-		
+		/* DEBUG */
+			System.out.println(nbreKit);
+			System.out.println(access);
+			System.out.println(kitname);
+		/* DEBUG */
+			
 		return true;
 	}
 }
