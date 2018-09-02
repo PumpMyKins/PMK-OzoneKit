@@ -27,7 +27,7 @@ public class KitBuy implements CommandExecutor{
 			
 			String kitname = args[0];
 			String transaction = args[1];
-			String newFileName = kitname+"-"+transaction+".xml";
+			String newFileName = kitname+"/"+transaction+".xml";
 			try {
 				
 				DocumentBuilderFactory kitFactory = DocumentBuilderFactory.newInstance();

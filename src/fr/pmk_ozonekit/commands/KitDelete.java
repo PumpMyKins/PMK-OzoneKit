@@ -20,7 +20,7 @@ public class KitDelete implements CommandExecutor {
 			
 			String kitname = args[0];
 			String transaction = args[1];
-			String filename = kitname+"-"+transaction+".xml";
+			String filename = kitname+"/"+transaction+".xml";
 			Path cible = Paths.get(filename);
 			
 			try {
