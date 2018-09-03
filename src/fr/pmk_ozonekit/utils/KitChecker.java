@@ -102,6 +102,7 @@ public class KitChecker {
 			
 			Element player = kit.createElement("player");
 			player.setAttribute("id", playerUUID);
+			kittyname.appendChild(player);
 			
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
