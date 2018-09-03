@@ -65,6 +65,7 @@ public class KitChecker {
 						
 						String tempUUID = eElement.getAttribute("id");
 						System.out.println("Temp uuid = "+tempUUID);
+						System.out.println("PLAYER UUID = "+ playerUUID);
 						if (tempUUID == playerUUID) {
 							
 							used = true;
