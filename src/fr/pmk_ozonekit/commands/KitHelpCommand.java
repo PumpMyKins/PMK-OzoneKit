@@ -9,6 +9,7 @@ public class KitHelpCommand implements ISubCommand {
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
 		sender.sendMessage("*--*  /kit help pour plus d'info  *--*");
+		sender.sendMessage("*--* /kit list pour avoir la list des kit *--*");
 		return true;
 	}
 }
