@@ -27,16 +27,16 @@ public class KitChecker {
 		return files;
 	}
 	
-	public int checkUUID(Player p, String kitname) {
+	public boolean checkUUID(Player p, String kitname) {
 		
 		
 		String playerUUID = p.getUniqueId().toString();
-		int used = 0;
+		int use = 0;
 		ArrayList<File> files = getListFiles(kitname);
 		for(int i = 0;i < files.size(); i++) {
 	
 			try {
-			
+				
 				File fXmlFile = new File(files.get(i).getName());
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -47,8 +47,9 @@ public class KitChecker {
 				System.out.println("Root :" + kitx.getDocumentElement().getNodeName());
 
 				NodeList nList = kitx.getElementsByTagName("player");
+				boolean used = false;
 				
-				for (int temp = 0;temp < nList.getLength(); temp++) {
+				for (int temp = 0; temp < nList.getLength(); temp++) {
 					
 					Node nNode = nList.item(temp);
 					
@@ -60,27 +61,41 @@ public class KitChecker {
 						
 						if (tempUUID == playerUUID) {
 							
-							used++;
+							used = true;
+							System.out.println("UUID CORRESPONDANT");
+							break;
 						}
+						
 					}
+				
 				}
+				if(used == false) {
+					
+					useKit(files.get(i).getName(), playerUUID);
+					return true;
+				}
+				
+				
 			} catch (Exception e) {
 		       e.printStackTrace();
 			}
 		}
-		return used;
+		return false;
+	}
+
+	public void useKit(String filename, String playerUUID) {
+		
+		
 	}
 	
-	public boolean onCheck(String kitname) {
+	public boolean onCheck(Player p,String kitname) {
 		
 		String kit = kitname;
 		
-		boolean access = false;
 		int nbreKit = getListFiles(kit).size();
-		
-		if(nbreKit < 1) {
+		if(nbreKit >= 1) {
+			boolean access = checkUUID(p, kitname);
 			
-			access = false;
 		}
 		else {
 		
@@ -88,7 +103,7 @@ public class KitChecker {
 		}
 		/* DEBUG */
 			System.out.println(nbreKit);
-			System.out.println(access);
+			//System.out.println(access);
 			System.out.println(kitname);
 		/* DEBUG */
 			
