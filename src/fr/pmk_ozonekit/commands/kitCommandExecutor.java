@@ -42,11 +42,6 @@ public class kitCommandExecutor implements CommandExecutor {
 				
 			}
 		}
-		else {
-			
-			System.out.println("WHO THE HELL ARE U ?" + sender);
-		}
-		
 		return true;
 	}
 	public kitCommandExecutor() {
