@@ -93,7 +93,7 @@ public class KitChecker {
 		
 		try {
 			
-			String filepath ="plugin/kit/"+kitname+"/"+filename;
+			String filepath ="plugins/kit/"+kitname+"/"+filename;
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 			Document kit = docBuilder.parse(filepath);
