@@ -84,7 +84,7 @@ public class KitChecker {
 
 	public void useKit(String filename, String playerUUID) {
 		
-		
+		//TODO XML FILE CHANGE
 	}
 	
 	public boolean onCheck(Player p,String kitname) {
