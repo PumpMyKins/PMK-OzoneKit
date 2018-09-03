@@ -34,7 +34,7 @@ public class KitBuy implements CommandExecutor{
 				DocumentBuilder kitBuilder = kitFactory.newDocumentBuilder();
 				
 				Document kit = kitBuilder.newDocument();
-				Element rootElement = kit.createElement("test");
+				Element rootElement = kit.createElement("kit");
 				kit.appendChild(rootElement);
 				
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
