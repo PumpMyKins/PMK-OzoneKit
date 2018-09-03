@@ -13,10 +13,12 @@ public class KitArmor implements ISubCommand{
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		KitChecker.onCheck(sender, "armor");
+		if(KitChecker.onCheck(sender, "armor") == true) {
+			
+			sender.sendMessage("Voici votre kit :");
+		}
 	
 		return false;
-		
 	}
 	
 }
