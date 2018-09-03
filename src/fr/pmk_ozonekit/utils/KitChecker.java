@@ -30,7 +30,6 @@ public class KitChecker {
 		File f = new File("plugins/kit/"+path);
 		System.out.println(f);
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
-		System.out.println(files.size());
 		return files;
 	}
 	
@@ -49,8 +48,6 @@ public class KitChecker {
 				Document kitx = dBuilder.parse("plugins/kit/"+kitname+"/"+fXmlFile);
 				
 				kitx.getDocumentElement().normalize();
-				
-				System.out.println("Root :" + kitx.getDocumentElement().getNodeName());
 
 				NodeList nList = kitx.getElementsByTagName("player");
 				boolean used = false;
@@ -64,9 +61,7 @@ public class KitChecker {
 						Element eElement = (Element) nNode;
 						
 						String tempUUID = eElement.getAttribute("id");
-						System.out.println("Temp uuid = "+tempUUID);
-						System.out.println("PLAYER UUID = "+ playerUUID);
-						if (tempUUID == playerUUID) {
+						if (tempUUID.equals(playerUUID)) {
 							
 							used = true;
 							System.out.println("UUID CORRESPONDANT");
@@ -130,10 +125,8 @@ public class KitChecker {
 		System.out.println(kit);
 		int nbreKit = getListFiles(kit).size();
 		if(nbreKit >= 1) {
-			System.out.println("ACCESS TO LVL1 VERIFICATION");
 			boolean access = checkUUID(p, kitname);
 			if(access == true) {
-				System.out.println("ACCESS TO LVL2 VERIFICATION");
 				return true;
 			}
 			else {
