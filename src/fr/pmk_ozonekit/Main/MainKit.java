@@ -6,6 +6,7 @@ public class MainKit extends JavaPlugin{
 
 	private static MainKit instance;
 	
+	@Override
 	public void onEnable() {
 			
 			instance = this;

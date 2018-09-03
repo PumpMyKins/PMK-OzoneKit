@@ -2,3 +2,10 @@ name: PmkOzone-Kit
 version: 0.8
 author: PumpMyKins
 main: fr.pmk_ozonekit.Main.MainKit
+commands:
+  kit:
+    description: Affiche toute les commandes de kit.
+  pmk-buy-kit:
+    description: Achat buycraft kit.
+  pmk-delete-kit:
+    description: Delete kitfile.
