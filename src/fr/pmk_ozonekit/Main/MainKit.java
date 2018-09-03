@@ -9,6 +9,8 @@ public class MainKit extends JavaPlugin{
 	public void onEnable() {
 			
 			instance = this;
+			
+			KitManager.init();
 	}
 	public void onDisable() {
 			
