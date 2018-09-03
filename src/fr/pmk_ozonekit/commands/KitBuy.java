@@ -28,9 +28,6 @@ public class KitBuy implements CommandExecutor{
 			String kitname = args[0];
 			String transaction = args[1];
 			String newFileName = "plugins/kit/"+kitname+"/"+transaction+".xml";
-			System.out.println(kitname);
-			System.out.println(transaction);
-			System.out.println(newFileName);
 			try {
 				
 				DocumentBuilderFactory kitFactory = DocumentBuilderFactory.newInstance();
