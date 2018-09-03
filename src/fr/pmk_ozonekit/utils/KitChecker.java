@@ -18,8 +18,8 @@ public class KitChecker {
 	
 	public static ArrayList<File> getListFiles(String path) {
 
-		File f = new File("plugin/kit/"+path);
-		
+		File f = new File("plugins/kit/"+path);
+		System.out.println(f);
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 		System.out.println(files.size());
 		return files;
@@ -88,7 +88,7 @@ public class KitChecker {
 	public static boolean onCheck(Player p,String kitname) {
 		
 		String kit = kitname;
-		
+		System.out.println(kit);
 		int nbreKit = getListFiles(kit).size();
 		if(nbreKit >= 1) {
 			System.out.println("ACCESS TO LVL1 VERIFICATION");
