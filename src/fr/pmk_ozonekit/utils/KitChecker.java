@@ -31,7 +31,6 @@ public class KitChecker {
 		
 		
 		String playerUUID = p.getUniqueId().toString();
-		int use = 0;
 		ArrayList<File> files = getListFiles(kitname);
 		for(int i = 0;i < files.size(); i++) {
 	
@@ -94,12 +93,21 @@ public class KitChecker {
 		
 		int nbreKit = getListFiles(kit).size();
 		if(nbreKit >= 1) {
+			System.out.println("ACCESS TO LVL1 VERIFICATION");
 			boolean access = checkUUID(p, kitname);
+			if(access == true) {
+				System.out.println("ACCESS TO LVL2 VERIFICATION");
+				return true;
+			}
+			else {
+				
+				p.sendMessage("Kit Déjà utilisée");
+			}
 			
 		}
 		else {
 		
-			
+			p.sendMessage("Aucune Kit acheté pour le moment.");
 		}
 		/* DEBUG */
 			System.out.println(nbreKit);
@@ -107,6 +115,6 @@ public class KitChecker {
 			System.out.println(kitname);
 		/* DEBUG */
 			
-		return true;
+		return false;
 	}
 }
