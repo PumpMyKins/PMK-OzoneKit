@@ -37,7 +37,7 @@ public class KitChecker {
 				File fXmlFile = new File(files.get(i).getName());
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-				Document kitx = dBuilder.parse(fXmlFile);
+				Document kitx = dBuilder.parse("plugins/kit/"+kitname+"/"+fXmlFile);
 				
 				kitx.getDocumentElement().normalize();
 				
