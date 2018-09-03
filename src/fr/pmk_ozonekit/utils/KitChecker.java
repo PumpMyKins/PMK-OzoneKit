@@ -1,17 +1,26 @@
 package fr.pmk_ozonekit.utils;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.bukkit.entity.Player;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 
 
 public class KitChecker {
@@ -68,7 +77,7 @@ public class KitChecker {
 				}
 				if(used == false) {
 					
-					useKit(files.get(i).getName(), playerUUID);
+					useKit(files.get(i).getName(), playerUUID, kitname);
 					return true;
 				}
 				
@@ -80,9 +89,37 @@ public class KitChecker {
 		return false;
 	}
 
-	public static void useKit(String filename, String playerUUID) {
+	public static void useKit(String filename, String playerUUID, String kitname) {
 		
-		//TODO XML FILE CHANGE
+		try {
+			
+			String filepath ="plugin/kit/"+kitname+"/"+filename;
+			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+			Document kit = docBuilder.parse(filepath);
+			
+			Node kittyname = kit.getFirstChild();
+			
+			Element player = kit.createElement("player");
+			player.setAttribute("id", playerUUID);
+			
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(kit);
+			StreamResult result = new StreamResult(new File(filepath));
+			transformer.transform(source, result);;
+			
+			System.out.println("DONE. UUID ADD.");
+			
+		}catch (ParserConfigurationException pce) {
+			pce.printStackTrace();
+		} catch (TransformerException tfe) {
+			tfe.printStackTrace();
+	   	} catch (IOException ioe) {
+			ioe.printStackTrace();
+	   	} catch (SAXException sae) {
+			sae.printStackTrace();
+	   	}
 	}
 	
 	public static boolean onCheck(Player p,String kitname) {
