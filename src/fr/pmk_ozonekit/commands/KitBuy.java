@@ -27,7 +27,7 @@ public class KitBuy implements CommandExecutor{
 			
 			String kitname = args[0];
 			String transaction = args[1];
-			String newFileName = kitname+"/"+transaction+".xml";
+			String newFileName = "plugins/kit/"+kitname+"/"+transaction+".xml";
 			System.out.println(kitname);
 			System.out.println(transaction);
 			System.out.println(newFileName);
@@ -37,7 +37,7 @@ public class KitBuy implements CommandExecutor{
 				DocumentBuilder kitBuilder = kitFactory.newDocumentBuilder();
 				
 				Document kit = kitBuilder.newDocument();
-				Element rootElement = kit.createElement(transaction);
+				Element rootElement = kit.createElement("test");
 				kit.appendChild(rootElement);
 				
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();

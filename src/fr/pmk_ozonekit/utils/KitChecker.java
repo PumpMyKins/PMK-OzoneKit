@@ -16,15 +16,16 @@ import org.w3c.dom.NodeList;
 
 public class KitChecker {
 	
-	public ArrayList<File> getListFiles(String path) {
+	public static ArrayList<File> getListFiles(String path) {
 
-		File f = new File(path);
+		File f = new File("plugin/kit/"+path);
 		
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
+		System.out.println(files.size());
 		return files;
 	}
 	
-	public boolean checkUUID(Player p, String kitname) {
+	public static boolean checkUUID(Player p, String kitname) {
 		
 		
 		String playerUUID = p.getUniqueId().toString();
@@ -79,12 +80,12 @@ public class KitChecker {
 		return false;
 	}
 
-	public void useKit(String filename, String playerUUID) {
+	public static void useKit(String filename, String playerUUID) {
 		
 		//TODO XML FILE CHANGE
 	}
 	
-	public boolean onCheck(Player p,String kitname) {
+	public static boolean onCheck(Player p,String kitname) {
 		
 		String kit = kitname;
 		
