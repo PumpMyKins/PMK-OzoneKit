@@ -20,12 +20,13 @@ public class KitDelete implements CommandExecutor {
 			
 			String kitname = args[0];
 			String transaction = args[1];
-			String filename = kitname+"/"+transaction+".xml";
+			String filename = "plugins/kit/"+kitname+"/"+transaction+".xml";
 			Path cible = Paths.get(filename);
 			
 			try {
 				
 				Files.delete(cible);
+				System.out.println("File Deleted Successfully");
 			} catch (NoSuchFileException x) {
 			    System.err.format("%s: no such" + " file or directory%n", cible);
 			} catch (DirectoryNotEmptyException x) {
