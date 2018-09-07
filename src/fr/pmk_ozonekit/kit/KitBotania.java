@@ -18,8 +18,7 @@ public class KitBotania implements ISubCommand{
 		int manaSpreader = 584;
 		int velocityLens = 4345; //1
 		int floralFertiliser = 4351;
-		int daybloom = 583 ;
-		int nightshade = 583;
+		int blackerLotus = 4434; //1
 		int overgrowthSeeds = 4442;
 		int floatingPureDaisy = 630;
 		
@@ -30,8 +29,7 @@ public class KitBotania implements ISubCommand{
 			ItemGiver.giveItem(sender, manaSpreader, 2);
 			ItemGiver.giveItem(sender, velocityLens, 2, 1);
 			ItemGiver.giveItem(sender, floralFertiliser, 64);
-			/*ItemGiver.giveItem(sender, daybloom, );
-			ItemGiver.giveItem(sender, nightshade, );*/
+			ItemGiver.giveItem(sender, blackerLotus, 16, 1);
 			ItemGiver.giveItem(sender, overgrowthSeeds, 8);
 			ItemGiver.giveItem(sender, floatingPureDaisy, 2);
 		}

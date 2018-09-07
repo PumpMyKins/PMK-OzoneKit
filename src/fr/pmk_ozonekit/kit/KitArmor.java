@@ -10,14 +10,23 @@ import fr.pmk_ozonekit.utils.ItemGiver;
 import fr.pmk_ozonekit.utils.KitChecker;
 
 public class KitArmor implements ISubCommand{
+
 	
-	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
-		
+			
+	int darkHelm = 5122;
+	int darkPlate = 5123;
+	int darkLeggings = 5124;
+	int darkSteelBoots = 5125;
+	
 		if(KitChecker.onCheck(sender, "armor") == true) {
 			
 			sender.sendMessage("Voici votre kit :");
-			//ItemGiver.giveItem(sender);
+			
+			ItemGiver.giveItem(sender, darkHelm, 1);
+			ItemGiver.giveItem(sender, darkPlate, 1);
+			ItemGiver.giveItem(sender, darkLeggings, 1);
+			ItemGiver.giveItem(sender, darkSteelBoots, 1);
 		}
 	
 		return false;
