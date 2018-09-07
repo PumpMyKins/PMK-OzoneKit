@@ -16,7 +16,7 @@ public class KitGratuit1 implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "gratuit1") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit gratuit :");
 			int xp = sender.getTotalExperience();
 			sender.setTotalExperience(xp + 370);
 			ItemGiver.giveItem(sender, 364, 16);

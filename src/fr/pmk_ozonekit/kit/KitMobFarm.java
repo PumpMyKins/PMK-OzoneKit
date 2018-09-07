@@ -22,7 +22,7 @@ public class KitMobFarm implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "mobfarm") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit MobFarm :");
 			ItemGiver.giveItem(sender, cursedEarth, 4);
 			ItemGiver.giveItem(sender, advancedItemCollector, 1);
 			ItemGiver.giveItem(sender, diamondSpike, 4);

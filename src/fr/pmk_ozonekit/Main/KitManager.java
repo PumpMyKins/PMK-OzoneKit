@@ -41,8 +41,9 @@ public class KitManager {
 		kitCmd.addSubCommand("questreward", new KitQuestReward());
 		kitCmd.addSubCommand("tinker", new KitTinker());
 		
+		kitCmd.addSubCommand("xp", new KitXp());
 		
-		kitCmd.addSubCommand("gratuit1", new KitGratuit1());
+		kitCmd.addSubCommand("gratuit", new KitGratuit1());
 		kitCmd.addSubCommand("gratuit2", new KitGratuit2());
 		
 		MainKit.getInstance().getCommand("pmk-buy-kit").setExecutor(kitbuycmd);

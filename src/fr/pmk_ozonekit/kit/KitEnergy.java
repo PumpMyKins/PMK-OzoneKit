@@ -20,7 +20,7 @@ public class KitEnergy implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "energy") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit Energy :");
 			
 			ItemGiver.giveItem(sender, solarPanel, 4);
 			ItemGiver.giveItem(sender, capacitorBank, 4, 2);

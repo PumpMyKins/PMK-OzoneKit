@@ -21,7 +21,7 @@ public class KitArmor implements ISubCommand{
 	
 		if(KitChecker.onCheck(sender, "armor") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit Armor :");
 			
 			ItemGiver.giveItem(sender, darkHelm, 1);
 			ItemGiver.giveItem(sender, darkPlate, 1);
