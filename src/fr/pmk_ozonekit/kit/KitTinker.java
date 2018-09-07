@@ -23,7 +23,7 @@ public class KitTinker implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "tinker") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit Tinker :");
 			ItemGiver.giveItem(sender, glowstoneIngot, 16, 3);
 			ItemGiver.giveItem(sender, searedBricks, 32, 2);
 			ItemGiver.giveItem(sender, smelteryDrain, 4, 1);

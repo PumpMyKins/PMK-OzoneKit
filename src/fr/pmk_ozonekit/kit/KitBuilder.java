@@ -24,7 +24,7 @@ public class KitBuilder implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "builder") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit Builder :");
 			ItemGiver.giveItem(sender, builderWand, 1);
 			ItemGiver.giveItem(sender, carpenterBlock, 256);
 			ItemGiver.giveItem(sender, carpenterWedge, 256);

@@ -18,7 +18,7 @@ public class KitQuestReward implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "questreward") == true) {
 			
-			sender.sendMessage("Voici votre kit :");
+			sender.sendMessage("Voici votre kit QuestReward :");
 			ItemGiver.giveItem(sender, lootChests, 16);
 		}
 		
