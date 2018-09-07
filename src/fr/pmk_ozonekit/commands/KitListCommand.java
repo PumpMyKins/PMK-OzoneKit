@@ -26,7 +26,7 @@ public class KitListCommand implements ISubCommand {
 		sender.sendMessage("§a /kit xp");
 		sender.sendMessage("§a /kit gratuit");
 		
-		return false;
+		return true;
 	}
 
 }
