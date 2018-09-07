@@ -1,5 +1,5 @@
 name: PmkOzone-Kit
-version: 0.82
+version: 0.9
 author: PumpMyKins
 main: fr.pmk_ozonekit.Main.MainKit
 commands:
