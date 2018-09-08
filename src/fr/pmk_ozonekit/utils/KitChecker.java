@@ -32,9 +32,9 @@ public class KitChecker {
 		return files;
 	}
 	
-	public static boolean checkUUID(Player p, String kitname) {
+	public static int checkUUID(Player p, String kitname, boolean usekit) {
 		
-		
+		int canUse = 0; 
 		String playerUUID = p.getUniqueId().toString();
 		ArrayList<File> files = getListFiles(kitname);
 		for(int i = 0;i < files.size(); i++) {
@@ -65,14 +65,20 @@ public class KitChecker {
 							used = true;
 							break;
 						}
+						else {
+							
+							canUse++;
+						}
 						
 					}
 				
 				}
-				if(used == false) {
+				if(usekit == true) {
+					if(used == false) {
 					
-					useKit(files.get(i).getName(), playerUUID, kitname);
-					return true;
+						useKit(files.get(i).getName(), playerUUID, kitname);
+						return 5555;
+					}
 				}
 				
 				
@@ -80,7 +86,7 @@ public class KitChecker {
 		       e.printStackTrace();
 			}
 		}
-		return false;
+		return canUse;
 	}
 
 	public static void useKit(String filename, String playerUUID, String kitname) {
@@ -121,8 +127,7 @@ public class KitChecker {
 		String kit = kitname;
 		int nbreKit = getListFiles(kit).size();
 		if(nbreKit >= 1) {
-			boolean access = checkUUID(p, kitname);
-			if(access == true) {
+			if(checkUUID(p, kitname, true) == 5555) {
 				return true;
 			}
 			else {
