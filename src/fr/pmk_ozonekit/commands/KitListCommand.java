@@ -14,8 +14,6 @@ public class KitListCommand implements ISubCommand {
 		
 		
 		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§2§oListe des kits §r§6§l[§r§2PumpMyKit§6§l]");
-		sender.sendMessage("§a /kit help ");
-		sender.sendMessage("§a /kit list ");
 		sender.sendMessage("§a /kit rangement ("+KitChecker.checkUUID(sender, "rangement", false)+")");
 		sender.sendMessage("§a /kit armor ("+KitChecker.checkUUID(sender, "armor", false)+")");
 		sender.sendMessage("§a /kit botania ("+KitChecker.checkUUID(sender, "botania", false)+")");
