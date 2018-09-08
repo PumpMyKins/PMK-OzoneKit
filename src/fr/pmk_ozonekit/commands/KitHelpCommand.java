@@ -10,6 +10,7 @@ public class KitHelpCommand implements ISubCommand {
 		
 		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§2§oListe des Commandes §r§6§l[§r§2PumpMyKit§6§l]");
 		sender.sendMessage("§2 /kit list");
+		
 		return true;
 	}
 }
