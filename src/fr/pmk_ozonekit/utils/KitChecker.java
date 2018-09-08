@@ -127,7 +127,7 @@ public class KitChecker {
 			}
 			else {
 				
-				p.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§4 Kit déjà utilisé " + kitname );
+				p.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§4 Kit "+ kitname + "déjà utilisé "  );
 			}
 			
 		}
