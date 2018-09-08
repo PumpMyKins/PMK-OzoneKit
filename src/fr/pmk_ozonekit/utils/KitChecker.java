@@ -34,9 +34,9 @@ public class KitChecker {
 	
 	public static int checkUUID(Player p, String kitname, boolean usekit) {
 		
-		int canUse = 0; 
-		String playerUUID = p.getUniqueId().toString();
 		ArrayList<File> files = getListFiles(kitname);
+		int canUse = files.size(); 
+		String playerUUID = p.getUniqueId().toString();
 		for(int i = 0;i < files.size(); i++) {
 	
 			try {
@@ -62,13 +62,11 @@ public class KitChecker {
 						String tempUUID = eElement.getAttribute("id");
 						if (tempUUID.equals(playerUUID)) {
 							
+							canUse--;
 							used = true;
 							break;
 						}
-						else {
-							
-							canUse++;
-						}
+
 						
 					}
 				
