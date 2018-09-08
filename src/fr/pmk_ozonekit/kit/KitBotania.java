@@ -20,7 +20,7 @@ public class KitBotania implements ISubCommand{
 		int floralFertiliser = 4351;
 		int blackerLotus = 4434; //1
 		int overgrowthSeeds = 4442;
-		int floatingPureDaisy = 630;
+		
 		
 		if(KitChecker.onCheck(sender, "botania") == true) {
 			
@@ -31,7 +31,7 @@ public class KitBotania implements ISubCommand{
 			ItemGiver.giveItem(sender, floralFertiliser, 64);
 			ItemGiver.giveItem(sender, blackerLotus, 16, 1);
 			ItemGiver.giveItem(sender, overgrowthSeeds, 8);
-			ItemGiver.giveItem(sender, floatingPureDaisy, 2);
+			
 		}
 		
 		return false;
