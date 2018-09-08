@@ -21,6 +21,7 @@ public class KitListCommand implements ISubCommand {
 		sender.sendMessage("");
 		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§4Entre parenthèse se trouve le nombre d'utilisation disponibles.");
 		sender.sendMessage("");
+		
 		//SET TEXT COMPONENT
 		
 		TextComponent rangement = new TextComponent("§a /kit rangement ("+KitChecker.checkUUID(sender, "rangement", false)+")");
