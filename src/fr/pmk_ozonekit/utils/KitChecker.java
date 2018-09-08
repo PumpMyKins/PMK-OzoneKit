@@ -28,7 +28,6 @@ public class KitChecker {
 	public static ArrayList<File> getListFiles(String path) {
 
 		File f = new File("plugins/kit/"+path);
-		System.out.println(f);
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 		return files;
 	}
@@ -64,7 +63,6 @@ public class KitChecker {
 						if (tempUUID.equals(playerUUID)) {
 							
 							used = true;
-							System.out.println("UUID CORRESPONDANT");
 							break;
 						}
 						
@@ -106,7 +104,6 @@ public class KitChecker {
 			StreamResult result = new StreamResult(new File(filepath));
 			transformer.transform(source, result);;
 			
-			System.out.println("DONE. UUID ADD.");
 			
 		}catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
@@ -122,7 +119,6 @@ public class KitChecker {
 	public static boolean onCheck(Player p,String kitname) {
 		
 		String kit = kitname;
-		System.out.println(kit);
 		int nbreKit = getListFiles(kit).size();
 		if(nbreKit >= 1) {
 			boolean access = checkUUID(p, kitname);
@@ -131,20 +127,14 @@ public class KitChecker {
 			}
 			else {
 				
-				p.sendMessage("Kit Déjà utilisée");
+				p.sendMessage("Kit Dï¿½jï¿½ utilisï¿½e");
 			}
 			
 		}
 		else {
 		
-			p.sendMessage("Aucune Kit acheté pour le moment.");
+			p.sendMessage("Aucune Kit achetï¿½ pour le moment.");
 		}
-		/* DEBUG */
-			System.out.println(nbreKit);
-			//System.out.println(access);
-			System.out.println(kitname);
-		/* DEBUG */
-			
 		return false;
 	}
 }
