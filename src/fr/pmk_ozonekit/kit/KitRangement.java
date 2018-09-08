@@ -28,7 +28,7 @@ public class KitRangement implements ISubCommand {
 			ItemGiver.giveItem(sender, diamondDrawerUpgrade, 16, 5);
 			ItemGiver.giveItem(sender, compressedChest, 4);
 			ItemGiver.giveItem(sender, enderChest, 2);
-			ItemGiver.giveItem(sender, enderTank, 2);
+			ItemGiver.giveItem(sender, enderTank, 2, 4096);
 			ItemGiver.giveItem(sender, alchemicalBag, 2);
 			
 		}
