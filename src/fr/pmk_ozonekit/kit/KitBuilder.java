@@ -27,10 +27,20 @@ public class KitBuilder implements ISubCommand{
 			sender.sendMessage("Voici votre kit Builder :");
 			ItemGiver.giveItem(sender, builderWand, 1);
 			ItemGiver.giveItem(sender, carpenterBlock, 256);
+			ItemGiver.giveItem(sender, carpenterBlock, 256);
+			ItemGiver.giveItem(sender, carpenterBlock, 256);
+			ItemGiver.giveItem(sender, carpenterBlock, 256);
+			ItemGiver.giveItem(sender, carpenterWedge, 256);
+			ItemGiver.giveItem(sender, carpenterWedge, 256);
+			ItemGiver.giveItem(sender, carpenterWedge, 256);
 			ItemGiver.giveItem(sender, carpenterWedge, 256);
 			ItemGiver.giveItem(sender, carpenterHammer, 1);
 			ItemGiver.giveItem(sender, carpenterChisel, 1);
 			ItemGiver.giveItem(sender, stoneBricks, 256);
+			ItemGiver.giveItem(sender, stoneBricks, 256);
+			ItemGiver.giveItem(sender, stoneBricks, 256);
+			ItemGiver.giveItem(sender, stoneBricks, 256);
+			ItemGiver.giveItem(sender, quartzBlock, 128);
 			ItemGiver.giveItem(sender, quartzBlock, 128);
 		}
 		
