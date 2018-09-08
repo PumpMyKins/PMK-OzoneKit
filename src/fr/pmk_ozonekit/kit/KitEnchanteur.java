@@ -22,7 +22,7 @@ public class KitEnchanteur implements ISubCommand{
 		int printingPressChase = 4540;
 		int inkSac = 351;
 		
-		if(KitChecker.onCheck(sender, "enchantement") == true) {
+		if(KitChecker.onCheck(sender, "enchanteur") == true) {
 			
 			sender.sendMessage("Voici votre kit Enchanteur :");
 			ItemGiver.giveItem(sender, disenchantementTable, 1);
