@@ -19,7 +19,6 @@ public class kitCommandExecutor implements CommandExecutor {
 			
 			if(args.length < 1) {
 				
-				System.out.println("NoSubCommand");
 				
 				sender.sendMessage("$2Faites : $r$4$n/kit help");
 				
