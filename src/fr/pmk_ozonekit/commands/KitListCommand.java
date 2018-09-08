@@ -11,7 +11,7 @@ public class KitListCommand implements ISubCommand {
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
 		
-		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§2§oListe des kits§r6§l[§r§2PumpMyKit§6§l]");
+		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§2§oListe des kits §r§6§l[§r§2PumpMyKit§6§l]");
 		sender.sendMessage("§a /kit help");
 		sender.sendMessage("§a /kit list");
 		sender.sendMessage("§a /kit rangement");
