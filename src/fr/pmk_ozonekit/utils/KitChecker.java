@@ -127,13 +127,13 @@ public class KitChecker {
 			}
 			else {
 				
-				p.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§4 Kit "+ kitname + "déjà utilisé "  );
+				p.sendMessage("§6§l[§r§2PumpMyKit§6§l]§r§4 Kit "+ kitname + " déjà utilisé "  );
 			}
 			
 		}
 		else {
 		
-			p.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§2§o Aucune kit "+ kitname +"acheté pour le moment ");
+			p.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§2§o Aucune kit "+ kitname +" acheté pour le moment ");
 		}
 		return false;
 	}
