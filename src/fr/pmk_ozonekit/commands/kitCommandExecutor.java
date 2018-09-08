@@ -21,7 +21,7 @@ public class kitCommandExecutor implements CommandExecutor {
 				
 				System.out.println("NoSubCommand");
 				
-				sender.sendMessage("Pas d'attribut de Commande spécifié (Exemple : /kit help)");
+				sender.sendMessage("$2Faites : $r$4$n/kit help");
 				
 			}else {
 				
