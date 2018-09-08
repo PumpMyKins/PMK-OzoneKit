@@ -24,7 +24,6 @@ public class KitEnchanteur implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "enchantement") == true) {
 			
-			int xp = sender.getTotalExperience();
 			sender.sendMessage("Voici votre kit Enchanteur :");
 			ItemGiver.giveItem(sender, disenchantementTable, 1);
 			ItemGiver.giveItem(sender, experienceObelisk, 1);
@@ -33,8 +32,8 @@ public class KitEnchanteur implements ISubCommand{
 			ItemGiver.giveItem(sender, printingPress, 1);
 			ItemGiver.giveItem(sender, printingPressChase, 1);
 			ItemGiver.giveItem(sender, inkSac, 64);
-			
-			sender.setTotalExperience(xp + 29315);
+			int xp = sender.getLevel();
+			sender.setLevel(xp + 100);
 			
 		}
 		
