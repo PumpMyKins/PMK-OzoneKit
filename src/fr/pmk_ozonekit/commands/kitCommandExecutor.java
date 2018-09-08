@@ -27,14 +27,12 @@ public class kitCommandExecutor implements CommandExecutor {
 				
 				String sub = args[0];
 				
-				System.out.println("SubCommand trouve "+ sub);
 				for(SubData s : this.subCommandList) {
 					
 					String subCmd = s.getSubCommand();
 					
 					if(sub.equals(subCmd)) {
 						
-						System.out.println("Execute : " + s.getSubCommandExecutor().getClass().getName());
 						return s.execute(p, cmd, getArgs(args));
 					}
 				}
