@@ -14,11 +14,11 @@ public class KitGratuit1 implements ISubCommand{
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		if(KitChecker.onCheck(sender, "gratuit1") == true) {
+		if(KitChecker.onCheck(sender, "gratuit") == true) {
 			
 			sender.sendMessage("Voici votre kit gratuit :");
-			int xp = sender.getTotalExperience();
-			sender.setTotalExperience(xp + 370);
+			int xp = sender.getLevel();
+			sender.setLevel(xp + 20);
 			ItemGiver.giveItem(sender, 364, 16);
 			
 		}

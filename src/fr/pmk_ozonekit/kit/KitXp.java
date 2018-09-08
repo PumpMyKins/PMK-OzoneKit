@@ -13,11 +13,11 @@ public class KitXp implements ISubCommand{
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		if(KitChecker.onCheck(sender, "gratuit1") == true) {
+		if(KitChecker.onCheck(sender, "xp") == true) {
 			
 			sender.sendMessage("Voici votre expérience :");
-			int xp = sender.getTotalExperience();
-			sender.setTotalExperience(xp + 29315);
+			int xp = sender.getLevel();
+			sender.setLevel(xp + 100);
 
 		}
 		
