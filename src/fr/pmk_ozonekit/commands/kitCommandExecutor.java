@@ -20,7 +20,7 @@ public class kitCommandExecutor implements CommandExecutor {
 			if(args.length < 1) {
 				
 				
-				sender.sendMessage("$2Faites : $r$4$n/kit help");
+				sender.sendMessage("§2Faites : §r§4§n/kit help");
 				
 			}else {
 				
