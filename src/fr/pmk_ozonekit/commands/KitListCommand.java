@@ -35,6 +35,10 @@ public class KitListCommand implements ISubCommand {
 		TextComponent tinker = new TextComponent("§a /kit tinker ("+KitChecker.checkUUID(sender, "tinker", false)+")");
 		TextComponent xp = new TextComponent("§a /kit xp ("+KitChecker.checkUUID(sender, "xp", false)+")");
 		TextComponent gratuit = new TextComponent("§a /kit gratuit ("+KitChecker.checkUUID(sender, "gratuit", false)+")");
+		TextComponent vegan = new TextComponent("§a /kit vegan ("+KitChecker.checkUUID(sender, "vegan", false)+")");
+		TextComponent fastfood = new TextComponent("§a /kit fastfood ("+KitChecker.checkUUID(sender, "fastfood", false)+")");
+
+
 		
 		
 		//SET CLICK EVENT
@@ -50,6 +54,10 @@ public class KitListCommand implements ISubCommand {
 		tinker.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/kit tinker"));
 		xp.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/kit xp"));
 		gratuit.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/kit gratuit"));
+		vegan.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/kit vegan"));
+		fastfood.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/kit fastfood"));
+
+
 		
 		//SET HOVER EVENT
 		
@@ -64,6 +72,9 @@ public class KitListCommand implements ISubCommand {
 		tinker.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§4 Prendre le kit Tinker").create()));
 		xp.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§4 Prendre le kit Xp").create()));
 		gratuit.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§4 Prendre le kit Gratuit").create()));
+		vegan.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§4 Prendre le kit vegan").create()));
+		fastfood.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("§4 Prendre le kit fastfood").create()));
+
 
 		sender.spigot().sendMessage(rangement);
 		sender.spigot().sendMessage(armor);
@@ -76,6 +87,10 @@ public class KitListCommand implements ISubCommand {
 		sender.spigot().sendMessage(tinker);
 		sender.spigot().sendMessage(xp);
 		sender.spigot().sendMessage(gratuit);
+		sender.spigot().sendMessage(vegan);
+		sender.spigot().sendMessage(fastfood);
+
+
 		
 		return true;
 	}

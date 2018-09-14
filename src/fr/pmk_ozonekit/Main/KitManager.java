@@ -46,6 +46,10 @@ public class KitManager {
 		kitCmd.addSubCommand("gratuit", new KitGratuit1());
 		kitCmd.addSubCommand("gratuit2", new KitGratuit2());
 		
+		kitCmd.addSubCommand("vegan", new KitVegan());
+		kitCmd.addSubCommand("fastfood", new KitFastFood());
+
+
 		MainKit.getInstance().getCommand("pmk-buy-kit").setExecutor(kitbuycmd);
 		MainKit.getInstance().getCommand("pmk-delete-kit").setExecutor(kitdeletecmd);
 	}
