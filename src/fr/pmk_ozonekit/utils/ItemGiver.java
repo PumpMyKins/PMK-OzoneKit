@@ -17,7 +17,7 @@ public class ItemGiver {
 	@SuppressWarnings("deprecation")
 	public static boolean giveItem(Player playername,int item, int nombre, int metadata, Inventory inv) {
 		
-		ItemStack itemToGive = new ItemStack(Material.getMaterial(item), nombre,(short)0,(byte)metadata);
+		ItemStack itemToGive = new ItemStack(Material.getMaterial(item), nombre,(short)0,(byte)2);
 		invSetter(itemToGive, inv);
 		return true;
 	}

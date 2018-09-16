@@ -31,7 +31,7 @@ public class KitEnergy implements ISubCommand{
 			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
 			ItemGiver.giveItem(sender, solarPanel, 4, invKit);
-			ItemGiver.giveItem(sender, capacitorBank, 4, 2, invKit);
+			ItemGiver.giveItem(sender, capacitorBank, 4, (byte) 2, invKit);
 			ItemGiver.giveItem(sender, energyConduit, 32, invKit);
 			
 			sender.openInventory(invKit);
