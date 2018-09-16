@@ -1,6 +1,7 @@
 package fr.pmk_ozonekit.commands;
 
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -53,6 +54,7 @@ public class KitBuy implements CommandExecutor{
 				tfe.printStackTrace();
 			
 			}
+			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r§2	Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
 			
 		}
 		return false;
