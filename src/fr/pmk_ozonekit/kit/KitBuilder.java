@@ -48,6 +48,8 @@ public class KitBuilder implements ISubCommand{
 			ItemGiver.giveItem(sender, stoneBricks, 64, invKit);
 			ItemGiver.giveItem(sender, quartzBlock, 64, invKit);
 			ItemGiver.giveItem(sender, quartzBlock, 64, invKit);
+			
+			sender.openInventory(invKit);
 		}
 		
 		return false;
