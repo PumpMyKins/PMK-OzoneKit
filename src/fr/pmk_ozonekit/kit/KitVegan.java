@@ -40,7 +40,7 @@ public class KitVegan implements ISubCommand{
 			ItemGiver.giveItem(sender, harvestcraftRoastedrootveggiemedleyItem, 4, invKit);
 			ItemGiver.giveItem(sender, 31, 32, 1, invKit);
 			
-			
+			sender.openInventory(invKit);
 		}
 		
 		return false;
