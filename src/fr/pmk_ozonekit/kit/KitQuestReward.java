@@ -22,7 +22,7 @@ public class KitQuestReward implements ISubCommand{
 		
 		if(KitChecker.onCheck(sender, "questreward") == true) {
 			
-			Inventory invKit = Bukkit.createInventory(null, 8, ChatColor.RED + "" + ChatColor.BOLD + kitname);
+			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
 			sender.sendMessage("Voici votre kit QuestReward :");
 			ItemGiver.giveItem(sender, lootChests, 16, invKit);

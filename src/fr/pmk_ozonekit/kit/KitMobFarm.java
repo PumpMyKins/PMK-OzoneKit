@@ -25,7 +25,7 @@ public class KitMobFarm implements ISubCommand{
 		String kitname = "MobFarm";
 		if(KitChecker.onCheck(sender, "mobfarm") == true) {
 			
-			Inventory invKit = Bukkit.createInventory(null, 8, ChatColor.RED + "" + ChatColor.BOLD + kitname);
+			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
 			sender.sendMessage("Voici votre kit MobFarm :");
 			ItemGiver.giveItem(sender, cursedEarth, 4, invKit);

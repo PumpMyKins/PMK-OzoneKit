@@ -27,7 +27,7 @@ public class KitRangement implements ISubCommand {
 		
 		if(KitChecker.onCheck(sender, "rangement") == true) {
 			
-			Inventory invKit = Bukkit.createInventory(null, 8, ChatColor.RED + "" + ChatColor.BOLD + kitname);
+			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
 			sender.sendMessage("Voici votre kit Rangement :");
 			ItemGiver.giveItem(sender, drawers, 16, invKit);
