@@ -56,8 +56,8 @@ public class KitBuy implements CommandExecutor{
 			}
 			
 			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r");
-			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
-			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
+			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a été acheté !! Faites /kit!!");
+			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a été acheté !! Faites /kit!!");
 			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§4§l ATTENTION UNE FOIS L'INVENTAIRE FERMER VOUS NE POURREZ PAS LE REOUVRIR !");
 			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r");
 			
