@@ -54,9 +54,10 @@ public class KitBuy implements CommandExecutor{
 				tfe.printStackTrace();
 			
 			}
+			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r $k ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ §r§6§l[§r§2PumpMyKit§6§l]");
 			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r§2	Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
 			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r§2	Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
-			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r§2	Un kit §r§4§l"+kitname+"§r§2 a été acheté !");
+			Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l] §r $k ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ §r§6§l[§r§2PumpMyKit§6§l]");
 			
 		}
 		return false;
