@@ -12,23 +12,27 @@ import fr.pmk_ozonekit.utils.ItemGiver;
 import fr.pmk_ozonekit.utils.KitChecker;
 import net.md_5.bungee.api.ChatColor;
 
-public class KitFastFood implements ISubCommand {
+public class KitArmure implements ISubCommand {
 
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 
-		String kitname = "fastfood";
+		String kitname = "armure";
 		
-		if(KitChecker.onCheck(sender, "fastfood") == true) {
+		if(KitChecker.onCheck(sender, "armure") == true) {
 			
-			sender.sendMessage("Voici votre kit fastfood :");
+			sender.sendMessage("Voici votre kit Armure :");
 			
 			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
-			ItemGiver.giveItem(sender, 6177, 16, invKit);
-			ItemGiver.giveItem(sender, 6442, 16, invKit);
-			ItemGiver.giveItem(sender, 6160, 16, invKit);
-			
+			ItemGiver.giveItem(sender, 4179, 1,(byte) 1, invKit);
+			ItemGiver.giveItem(sender, 4164, 1, invKit);
+			ItemGiver.giveItem(sender, 4506, 1, invKit);
+			ItemGiver.giveItem(sender, 4507, 1, invKit);
+			ItemGiver.giveItem(sender, 4508, 1, invKit);
+			ItemGiver.giveItem(sender, 4509, 1, invKit);
+
+
 			sender.openInventory(invKit);
 		}
 		

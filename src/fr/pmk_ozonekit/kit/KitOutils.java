@@ -12,32 +12,32 @@ import fr.pmk_ozonekit.utils.ItemGiver;
 import fr.pmk_ozonekit.utils.KitChecker;
 import net.md_5.bungee.api.ChatColor;
 
-public class KitArmor implements ISubCommand{
+public class KitOutils implements ISubCommand {
 
-	
+	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
+
+		String kitname = "outils";
+		
+		if(KitChecker.onCheck(sender, "outils") == true) {
 			
-	int darkHelm = 5122;
-	int darkPlate = 5123;
-	int darkLeggings = 5124;
-	int darkSteelBoots = 5125;
-	String kitname ="Armure";
-	
-		if(KitChecker.onCheck(sender, "armor") == true) {
+			sender.sendMessage("Voici votre kit Outils :");
 			
 			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
-			sender.sendMessage("Voici votre kit Armor :");
+			ItemGiver.giveItem(sender, 5605, 1, invKit);
+			ItemGiver.giveItem(sender, 5603, 1, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
+			ItemGiver.giveItem(sender, 352, 64, invKit);
 			
-			ItemGiver.giveItem(sender, darkHelm, 1, invKit);
-			ItemGiver.giveItem(sender, darkPlate, 1, invKit);
-			ItemGiver.giveItem(sender, darkLeggings, 1, invKit);
-			ItemGiver.giveItem(sender, darkSteelBoots, 1, invKit);
-		
 			sender.openInventory(invKit);
 		}
-	
+		
 		return false;
+		
 	}
-	
-}
+} 

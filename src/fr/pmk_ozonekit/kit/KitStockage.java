@@ -12,20 +12,26 @@ import fr.pmk_ozonekit.utils.ItemGiver;
 import fr.pmk_ozonekit.utils.KitChecker;
 import net.md_5.bungee.api.ChatColor;
 
-public class KitQuestReward implements ISubCommand{
-	
+public class KitStockage implements ISubCommand {
+
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		int lootChests = 7569;
-		String kitname ="QuestReward";
+		String kitname = "stockage";
 		
-		if(KitChecker.onCheck(sender, "questreward") == true) {
+		if(KitChecker.onCheck(sender, "stockage") == true) {
+			
+			sender.sendMessage("Voici votre kit Stockage :");
 			
 			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
-			sender.sendMessage("Voici votre kit QuestReward :");
-			ItemGiver.giveItem(sender, lootChests, 16, invKit);
+			ItemGiver.giveItem(sender, 2099, 8, invKit);
+			ItemGiver.giveItem(sender, 2097, 8, invKit);
+			ItemGiver.giveItem(sender, 2103, 1, invKit);
+			ItemGiver.giveItem(sender, 6789, 8,(byte) 3, invKit);
+			ItemGiver.giveItem(sender, 6789, 8,(byte) 6, invKit);
+			ItemGiver.giveItem(sender, 2248, 16, invKit);
+
 			
 			sender.openInventory(invKit);
 		}
@@ -33,4 +39,4 @@ public class KitQuestReward implements ISubCommand{
 		return false;
 		
 	}
-}
+} 

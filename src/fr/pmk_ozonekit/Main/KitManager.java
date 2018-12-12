@@ -29,25 +29,19 @@ public class KitManager {
 		kitCmd.addSubCommand("help", new KitHelpCommand());
 		kitCmd.addSubCommand("list", new KitListCommand());
 		
-		kitCmd.addSubCommand("rangement", new KitRangement());
-		kitCmd.addSubCommand("armor", new KitArmor());
+		kitCmd.addSubCommand("mobfarm", new KitMobFarm());
+		kitCmd.addSubCommand("energy", new KitEnergy());
 		kitCmd.addSubCommand("botania", new KitBotania());
 		
-		kitCmd.addSubCommand("builder", new KitBuilder());
-		kitCmd.addSubCommand("enchanteur", new KitEnchanteur());
-		kitCmd.addSubCommand("energy", new KitEnergy());		
-
-		kitCmd.addSubCommand("mobfarm", new KitMobFarm());
-		kitCmd.addSubCommand("questreward", new KitQuestReward());
-		kitCmd.addSubCommand("tinker", new KitTinker());
+		kitCmd.addSubCommand("stockage", new KitStockage());
+		kitCmd.addSubCommand("armure", new KitArmure());
+		kitCmd.addSubCommand("outils", new KitOutils());
 		
-		kitCmd.addSubCommand("xp", new KitXp());
-		
-		kitCmd.addSubCommand("gratuit", new KitGratuit1());
-		kitCmd.addSubCommand("gratuit2", new KitGratuit2());
-		
-		kitCmd.addSubCommand("vegan", new KitVegan());
 		kitCmd.addSubCommand("fastfood", new KitFastFood());
+		kitCmd.addSubCommand("vegan", new KitVegan());
+		kitCmd.addSubCommand("gratuit", new KitGratuit());
+
+
 
 
 		MainKit.getInstance().getCommand("pmk-buy-kit").setExecutor(kitbuycmd);

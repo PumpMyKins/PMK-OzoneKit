@@ -17,11 +17,8 @@ public class KitEnergy implements ISubCommand{
 	@Override
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		
-		
-		int solarPanel = 2680;
-		int capacitorBank = 1495;
-		int energyConduit = 5091;
+		int solarPanel = 228;
+		int energyConduit = 5455;
 		String kitname = "energy";
 		
 		if(KitChecker.onCheck(sender, "energy") == true) {
@@ -31,8 +28,7 @@ public class KitEnergy implements ISubCommand{
 			Inventory invKit = Bukkit.createInventory(null, 9, ChatColor.RED + "" + ChatColor.BOLD + kitname);
 			
 			ItemGiver.giveItem(sender, solarPanel, 4, invKit);
-			ItemGiver.giveItem(sender, capacitorBank, 4, (byte) 2, invKit);
-			ItemGiver.giveItem(sender, energyConduit, 32, invKit);
+			ItemGiver.giveItem(sender, energyConduit, 16,(byte) 1, invKit);
 			
 			sender.openInventory(invKit);
 		}
