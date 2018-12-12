@@ -37,6 +37,8 @@ public class KitChecker {
 		ArrayList<File> files = getListFiles(kitname);
 		int canUse = files.size(); 
 		String playerUUID = p.getUniqueId().toString();
+		boolean isSingle = true;
+		boolean canTook = false;
 		for(int i = 0;i < files.size(); i++) {
 	
 			try {
@@ -47,8 +49,12 @@ public class KitChecker {
 				Document kitx = dBuilder.parse("plugins/kit/"+kitname+"/"+fXmlFile);
 				
 				kitx.getDocumentElement().normalize();
-
+				
 				NodeList nList = kitx.getElementsByTagName("player");
+				NodeList bList = kitx.getElementsByTagName("buyer");
+				if(bList.getLength() < 1) {
+					isSingle = false;
+				}
 				boolean used = false;
 				
 				for (int temp = 0; temp < nList.getLength(); temp++) {
@@ -71,11 +77,34 @@ public class KitChecker {
 					}
 				
 				}
+				if(isSingle = true) {
+					for (int temp = 0; temp < nList.getLength(); temp++) {
+						
+						Node nNode = bList.item(temp);
+						
+						if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+							
+							Element eElement = (Element) nNode;
+							
+							String tempUUID = eElement.getAttribute("id");
+							if (tempUUID.equals(playerUUID)) {
+								
+								canTook = true;
+							}
+
+							
+						}
+					
+					}
+				}
 				if(usekit == true) {
 					if(used == false) {
-					
+						if(isSingle == false || isSingle == true && canTook == true) {
+							
 						useKit(files.get(i).getName(), playerUUID, kitname);
 						return 5555;
+						
+						}
 					}
 				}
 				

@@ -30,7 +30,7 @@ public class KitBuy implements CommandExecutor{
 			String kitname = args[0];
 			String transaction = args[1];
 			String buyeruuid = args[2];
-			String single = args[3];
+			String multi = args[3];
 			String newFileName = "plugins/kit/"+kitname+"/"+transaction+".xml";
 			try {
 				
@@ -40,12 +40,13 @@ public class KitBuy implements CommandExecutor{
 				Document kit = kitBuilder.newDocument();
 				Element rootElement = kit.createElement("kit");
 				kit.appendChild(rootElement);
-				
-				Node buyername = kit.getFirstChild();
-				Element buyerElement = kit.createElement("buyer");
-				buyerElement.setAttribute("uuid", buyeruuid);
-				buyername.appendChild(buyerElement);
-				
+				if(multi == "false") {
+					
+					Node buyername = kit.getFirstChild();
+					Element buyerElement = kit.createElement("buyer");
+					buyerElement.setAttribute("uuid", buyeruuid);
+					buyername.appendChild(buyerElement);
+				}
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				DOMSource source = new DOMSource(kit);
@@ -63,7 +64,7 @@ public class KitBuy implements CommandExecutor{
 			
 			}
 			
-			if(single == "false") {
+			if(multi == "true") {
 				Bukkit.broadcastMessage("ß6ßl[ßrß2PumpMyKitß6ßl]ßr");
 				Bukkit.broadcastMessage("ß6ßl[ßrß2PumpMyKitß6ßl]ßrß2 Un kit ßrß4ßl"+kitname+"ßrß2 a √©t√© achet√© !! Faites /kit!!");
 				Bukkit.broadcastMessage("ß6ßl[ßrß2PumpMyKitß6ßl]ßrß2 Un kit ßrß4ßl"+kitname+"ßrß2 a √©t√© achet√© !! Faites /kit!!");
