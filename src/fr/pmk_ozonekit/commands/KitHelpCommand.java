@@ -8,8 +8,8 @@ import org.bukkit.entity.Player;
 public class KitHelpCommand implements ISubCommand {
 	public boolean onSubCommand(Player sender, Command cmd, List<String> args) {
 		
-		sender.sendMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l] Â§rÂ§2Â§oListe des Commandes Â§rÂ§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]");
-		sender.sendMessage("Â§2 /kit list");
+		sender.sendMessage("§6§l[§r§2PumpMyKit§6§l] §r§2§oListe des Commandes §r§6§l[§r§2PumpMyKit§6§l]");
+		sender.sendMessage("§2 /kit list");
 		
 		return true;
 	}

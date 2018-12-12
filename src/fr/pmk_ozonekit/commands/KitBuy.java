@@ -11,6 +11,7 @@ import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Node;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -28,6 +29,8 @@ public class KitBuy implements CommandExecutor{
 			
 			String kitname = args[0];
 			String transaction = args[1];
+			String buyeruuid = args[2];
+			String single = args[3];
 			String newFileName = "plugins/kit/"+kitname+"/"+transaction+".xml";
 			try {
 				
@@ -37,6 +40,11 @@ public class KitBuy implements CommandExecutor{
 				Document kit = kitBuilder.newDocument();
 				Element rootElement = kit.createElement("kit");
 				kit.appendChild(rootElement);
+				
+				Node buyername = kit.getFirstChild();
+				Element buyerElement = kit.createElement("buyer");
+				buyerElement.setAttribute("uuid", buyeruuid);
+				buyername.appendChild(buyerElement);
 				
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
@@ -55,12 +63,13 @@ public class KitBuy implements CommandExecutor{
 			
 			}
 			
-			Bukkit.broadcastMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]Â§r");
-			Bukkit.broadcastMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]Â§rÂ§2 Un kit Â§rÂ§4Â§l"+kitname+"Â§rÂ§2 a Ã©tÃ© achetÃ© !! Faites /kit!!");
-			Bukkit.broadcastMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]Â§rÂ§2 Un kit Â§rÂ§4Â§l"+kitname+"Â§rÂ§2 a Ã©tÃ© achetÃ© !! Faites /kit!!");
-			Bukkit.broadcastMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]Â§rÂ§4Â§l ATTENTION UNE FOIS L'INVENTAIRE FERMER VOUS NE POURREZ PAS LE REOUVRIR !");
-			Bukkit.broadcastMessage("Â§6Â§l[Â§rÂ§2PumpMyKitÂ§6Â§l]Â§r");
-			
+			if(single == "false") {
+				Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r");
+				Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a Ã©tÃ© achetÃ© !! Faites /kit!!");
+				Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§2 Un kit §r§4§l"+kitname+"§r§2 a Ã©tÃ© achetÃ© !! Faites /kit!!");
+				Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r§4§l ATTENTION UNE FOIS L'INVENTAIRE FERMER VOUS NE POURREZ PAS LE REOUVRIR !");
+				Bukkit.broadcastMessage("§6§l[§r§2PumpMyKit§6§l]§r");
+			}
 		}
 		return false;
 	}	
