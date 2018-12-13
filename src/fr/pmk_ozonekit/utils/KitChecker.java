@@ -86,7 +86,7 @@ public class KitChecker {
 							
 							Element eElement = (Element) nNode;
 							
-							String tempUUID = eElement.getAttribute("id");
+							String tempUUID = eElement.getAttribute("uuid");
 							if (tempUUID.equals(playerUUID)) {
 								
 								canTook = true;
